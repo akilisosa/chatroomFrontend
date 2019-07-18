@@ -22,4 +22,10 @@ export class LoginService {
     console.log(params);
     return this.http.post(this.serverUrl+'User/', params);
   }
-}
+
+  public getAll(){
+    return this.http.get(this.serverUrl+'User/');
+      
+      }
+  }
+

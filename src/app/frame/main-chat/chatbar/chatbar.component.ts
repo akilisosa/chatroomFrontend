@@ -14,18 +14,19 @@ export class ChatbarComponent implements OnInit {
     user_Id:sessionStorage.getItem('LoggedInId'),
     channel_Id:"1"
     };
+    
   constructor(private commentService: CommentsService) { }
 
   ngOnInit() {
   }
 
-  submitnewComment(){
+//   submitnewComment(){
 
- this.commentService.submitComment(this.chat.content).subscribe((res)=>{
- console.log(res);
+//  this.commentService.submitComment(this.chat.content).subscribe((res)=>{
+//  console.log(res);
  
- });
+//  });
  
-  }
+//   }
 
 }
