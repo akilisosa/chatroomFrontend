@@ -35,9 +35,11 @@ export class UserInfoComponent implements OnInit {
 
 this.loginService.login(this.user.email, this.user.password).subscribe((res)=>{
 console.log(res);
+let response = res;
+console.log(response.aeid);
 const LoggedInUser = JSON.stringify(res);
 sessionStorage.setItem('LoggedInUser', LoggedInUser);
-
+sessionStorage.setItem('LoggedInId', response.aeid);
 
 //LoggedInUser = JSON.parse(LoggedInUser);
 if (LoggedInUser!='null') {

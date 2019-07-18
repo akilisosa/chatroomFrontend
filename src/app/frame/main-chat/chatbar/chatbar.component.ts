@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Comments } from '../../'
+import { Comments } from 'src/app/models/Comments';
+import { CommentsService } from '../../../service/comments.service';
 
 @Component({
   selector: 'app-chatbar',
@@ -7,17 +8,24 @@ import { Comments } from '../../'
   styleUrls: ['./chatbar.component.css']
 })
 export class ChatbarComponent implements OnInit {
-  comment: Comment = {
-    id: 0,
-    email: "",
-    password: "",
-    adminLvl: 1,
-    status:1
-  
+  chat: Comments = {
+    content:"",
+    postDate:"",
+    user_Id:sessionStorage.getItem('LoggedInId'),
+    channel_Id:"1"
     };
-  constructor() { }
+  constructor(private commentService: CommentsService) { }
 
   ngOnInit() {
+  }
+
+  submitnewComment(){
+
+ this.commentService.submitComment(this.chat.content).subscribe((res)=>{
+ console.log(res);
+ 
+ });
+ 
   }
 
 }
