@@ -22,6 +22,13 @@ export class UserInfoComponent implements OnInit {
   ngOnInit() {
   }
 
+  showRegister(){
+    document.getElementById('userInfo').classList.remove('show');
+    document.getElementById('userInfo').classList.add('hide');
+    document.getElementById('registerInfo').classList.remove('hide');
+    document.getElementById('registerInfo').classList.add('show');
+  }
+
   login() {
    console.log(this.user.email);
    console.log(this.user.password);
@@ -42,7 +49,19 @@ if (LoggedInUser!='null') {
 
 }
 
-register(){
-  
-}
+register() {
+  console.log(this.user.email);
+  console.log(this.user.password);
+
+this.loginService.register(this.user.email, this.user.password).subscribe((res)=>{
+console.log(res);
+const LoggedInUser = JSON.stringify(res);
+sessionStorage.setItem('LoggedInUser', LoggedInUser);
+
+});}
+
+
+
+
+
 }
