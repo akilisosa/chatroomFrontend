@@ -1,10 +1,23 @@
-<div id="userInfo" >
+<div id="userInfo" class="show">
   <form>
     <div class="from-group">
       <label for="usernameField">email: </label>
         <input  type="email" id="usernameField" class="form-control inputs" name="username" [(ngModel)]="user.email">  
         <label for="passwordField">password:</label>
         <input type="password" id="passwordField" class="form-control inputs" name="password" [(ngModel)] = "user.password">
+        <button  id="loginbtn" class="btn btn-warning float-right" (click)="changeScreen()">register</button>
         <button  id="loginbtn" class="btn btn-warning float-right" (click)="login()">loggin</button>
     </div>
   </form>
+
+  <div id="userInfo" class="hide">
+    <form>
+      <div class="from-group">
+        <label for="usernameField">email: </label>
+          <input  type="email" id="usernameField" class="form-control inputs" name="username" [(ngModel)]="user.email">  
+          <label for="passwordField">password:</label>
+          <input type="password" id="passwordField" class="form-control inputs" name="password" [(ngModel)] = "user.password">
+          <button  id="loginbtn" class="btn btn-warning float-right" (click)="changeScreen()">register</button>
+          <button  id="loginbtn" class="btn btn-warning float-right" (click)="login()">loggin</button>
+      </div>
+    </form>

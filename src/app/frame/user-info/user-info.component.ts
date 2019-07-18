@@ -21,7 +21,8 @@ export class UserInfoComponent implements OnInit {
 
   ngOnInit() {
   }
-login() {
+
+  login() {
    console.log(this.user.email);
    console.log(this.user.password);
 
@@ -37,13 +38,11 @@ if (LoggedInUser!='null') {
 } else {
   console.log('no no no you are logged out');
 }
-
-
-
 });
 
+}
 
-
-
+register(){
+  
 }
 }
